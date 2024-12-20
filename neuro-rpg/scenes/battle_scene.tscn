@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxmtvn51hgf7i"]
+
+[ext_resource type="PackedScene" uid="uid://bgiksms4fcopr" path="res://scenes/base_battle_window.tscn" id="1_qddx7"]
+[ext_resource type="FontFile" uid="uid://byowu4gnlya0l" path="res://assets/PressStart2P.ttf" id="2_w3tw4"]
+
+[sub_resource type="Theme" id="Theme_h0tay"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="battle_windows" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.734375
+anchor_bottom = 1.0
+offset_top = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="party_list" parent="battle_windows" instance=ExtResource("1_qddx7")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="battle_windows/party_list"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 83.0
+offset_bottom = 109.0
+scale = Vector2(0.34, 0.5)
+
+[node name="Label" type="Label" parent="battle_windows/party_list/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_w3tw4")
+text = "Neuro"
+
+[node name="enemy_list" parent="battle_windows" instance=ExtResource("1_qddx7")]
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+
+[node name="player_actions" parent="." instance=ExtResource("1_qddx7")]
+layout_mode = 2
+offset_left = 30.0
+offset_top = 122.0
+offset_right = 77.0
+offset_bottom = 180.0
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="player_actions"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 106.0
+offset_bottom = 138.0
+scale = Vector2(0.41, 0.5)
+
+[node name="Button" type="Button" parent="player_actions/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_h0tay")
+theme_override_fonts/font = ExtResource("2_w3tw4")
+text = "FIGHT"
+
+[node name="Button2" type="Button" parent="player_actions/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_w3tw4")
+text = "Magic"
+
+[node name="Button3" type="Button" parent="player_actions/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_w3tw4")
+text = "Item"
+
+[node name="Button4" type="Button" parent="player_actions/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_w3tw4")
+text = "Defend"

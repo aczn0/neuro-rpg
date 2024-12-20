@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgiksms4fcopr"]
+
+[ext_resource type="Texture2D" uid="uid://bhuhxmk3nsit4" path="res://assets/box0.png" id="1_wop00"]
+
+[node name="base_battle_window" type="NinePatchRect"]
+size_flags_horizontal = 3
+texture = ExtResource("1_wop00")
+region_rect = Rect2(0, 0, 20, 20)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
